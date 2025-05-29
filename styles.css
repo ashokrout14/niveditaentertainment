@@ -17,7 +17,6 @@ header {
 h1, h2, h3 {
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 1px;
-  color: #F1FAEE;
 }
 .main-logo {
   max-height: 100px;
@@ -291,5 +290,11 @@ footer a:hover {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
 }
+#typewriter {
+  color: #F1FAEE;  /* Light color for contrast */
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 
 
