@@ -640,6 +640,56 @@ footer a:hover {
     height: 80px;
   }
 }
+.video-banner {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.video-banner .video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-banner iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none; /* Disable clicks */
+}
+
+.video-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 20px 30px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.video-overlay h2 {
+  font-size: 2.5rem;
+  font-family: 'Bebas Neue', sans-serif;
+  color: #F1FAEE;
+}
+
+@media (max-width: 768px) {
+  .video-banner {
+    height: 40vh;
+  }
+
+  .video-overlay h2 {
+    font-size: 1.8rem;
+  }
+}
 
 
 
