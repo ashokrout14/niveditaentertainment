@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nivedita Entertainment | Odisha’s Leading Production House</title>
   <meta name="description" content="Nivedita Entertainment is a creative powerhouse in Odisha, India—producing original music, engaging music videos, and inspiring short films. Discover our work on YouTube." />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
 </head>
 <body>
 
-  <header>
+  <header class="fade-in">
     <img src="assets/ne.jpg" alt="Nivedita Entertainment Logo" class="main-logo" />
     <h1>Nivedita Entertainment</h1>
     <p>Odisha-based Entertainment Brand</p>
@@ -80,7 +80,7 @@
 
   </header>
 
-  <section class="intro">
+  <section class="intro bounce-in">
     <h2>About Us</h2>
     <p>
       At Nivedita Entertainment, we don’t just create music—we craft stories that resonate, melodies that stay, and visuals that inspire. Based in Odisha, we are proud to bring the spirit of India to global audiences through <strong>Music</strong>, <strong>Music Videos</strong>, and <strong>Short Films</strong>.
@@ -90,7 +90,7 @@
     </div>
   </section>
 
-  <section class="services">
+  <section class="services slide-in-left">
     <h2>Our Productions</h2>
     <div class="service-box">
       <h3>🎵 Music Production</h3>
@@ -105,13 +105,45 @@
       <p>Emotional, inspiring, and fun short films created by passionate filmmakers.</p>
     </div>
   </section>
+  
+  <section class="featured-video bounce-in">
+  <h2>🎬 Featured Video</h2>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/QJFDz1QRr3A" 
+            title="Nivedita Entertainment - Featured Video" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+  
+  <section class="featured fade-up">
+  <h2>Featured Artists</h2>
+  <div class="artist-grid">
+    <div class="artist-card rotate-in">
+      <img src="assets/ne.jpg" alt="Artist 1" />
+      <h3>Artist 1</h3>
+    </div>
+    <div class="artist-card rotate-in">
+      <img src="assets/ne.jpg" alt="Artist 2" />
+      <h3>Artist 2</h3>
+    </div>
+    <div class="artist-card rotate-in">
+      <img src="assets/ne.jpg" alt="Artist 3" />
+      <h3>Artist 3</h3>
+    </div>
+  </div>
+</section>
+
 
   <section>
   <h2>The Nivedita Entertainment Network</h2>
   <p>Discover our vibrant family of YouTube channels — each one curated to bring you music, culture, and laughter from every corner of India.</p>
 
   <div class="scroll-wrapper">
-    <div class="scroll-track">
+    <div class="scroll-track fade-in">
       <div class="channel-box">
         <a href="https://www.youtube.com/@bhaktisagartunes" target="_blank">
           <img src="assets/bst.jpg" alt="Bhakti Sagar Tunes Logo" class="channel-logo" />
@@ -177,11 +209,32 @@
     </div>
   </div>
 </section>
-<section class="testimonials">
+<section class="testimonials slide-in-left">
   <h2>What Our Fans Say</h2>
   <blockquote>"These beats are straight fire! 🔥" – Music Lover</blockquote>
   <blockquote>"Videos that make you laugh, cry, and dance!" – Happy Viewer</blockquote>
 </section>
+
+<section class="contact enhanced-contact bouncec-in">
+  <div class="contact-content">
+    <h2>Let's Collaborate</h2>
+    <p>Have a project in mind or just want to say hello? We’d love to hear from you!</p>
+    <a href="mailto:info@niveditaentertainment.com" class="cta-link">📩 Send Us a Message</a>
+
+    <div class="social-icons">
+      <a href="https://www.youtube.com/@niveditaentertainment" target="_blank" aria-label="YouTube">
+        <img src="assets/yt.png" alt="YouTube">
+      </a>
+      <a href="https://www.instagram.com/niveditaentertainment" target="_blank" aria-label="Instagram">
+        <img src="assets/instagram.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/niveditaentertainment" target="_blank" aria-label="Facebook">
+        <img src="assets/facebook.png" alt="Facebook">
+      </a>
+    </div>
+  </div>
+</section>
+
 
 
 
@@ -202,7 +255,11 @@
 </footer>
 <a href="https://www.youtube.com/@niveditaentertainment" target="_blank" class="floating-cta">🎥 Subscribe on YouTube</a>
 <a href="#" class="scroll-to-top">⬆️ Back to Top</a>
-<div id="loader"></div>
+
+<div id="loader">
+  <img src="assets/ne.jpg" alt="Nivedita Entertainment Logo" class="loader-logo" />
+</div>
+
 
 <script>
   const scrollBtn = document.querySelector('.scroll-to-top');
@@ -210,6 +267,23 @@
     scrollBtn.classList.toggle('show', window.scrollY > 300);
   });
 </script>
+<script>
+  // Scroll-triggered animations
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .fade-up, .rotate-in, .bounce-in,.bouncec-in').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
 
 </body>
 </html>
