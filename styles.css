@@ -616,6 +616,30 @@ footer a:hover {
   opacity: 1;
 }
 
+/* Mobile-friendly horizontal scroll */
+@media (max-width: 768px) {
+  .scroll-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .scroll-track {
+    display: flex;
+    gap: 20px;
+    width: auto; /* Allow it to fit content width */
+    animation: none; /* Disable infinite scroll on mobile */
+  }
+}
+@media (max-width: 768px) {
+  .channel-box {
+    width: 150px;
+  }
+
+  .channel-logo {
+    width: 80px;
+    height: 80px;
+  }
+}
 
 
 
